@@ -16,13 +16,11 @@ const App = () => {
   const handleAddTask = () => {
     if (task) {
       if (editIndex !== -1) {
-        // Edit existing task
         const updatedTasks = [...tasks];
         updatedTasks[editIndex] = task;
         setTasks(updatedTasks);
         setEditIndex(-1);
       } else {
-        // Add new task
         setTasks([...tasks, task]);
       }
       setTask('');
@@ -57,17 +55,19 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>FlowText</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.heading}>FlowText</Text>
+      </View>
       <Text style={styles.title}>Task Tracker</Text>
       <TextInput
         style={styles.input}
-        placeholder='Enter task'
+        placeholder='New Task'
         value={task}
         onChangeText={(text) => setTask(text)}
       />
       <TouchableOpacity style={styles.addButton} onPress={handleAddTask}>
         <Text style={styles.addButtonText}>
-          {editIndex !== -1 ? 'Update Task' : 'Add Task'}
+          {editIndex !== -1 ? 'Update' : '+'}
         </Text>
       </TouchableOpacity>
       <FlatList
@@ -85,6 +85,12 @@ const styles = StyleSheet.create({
     padding: 40,
     marginTop: 40,
   },
+  titleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 20,
+  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 7,
-    color: 'green',
+    color: '#212121',
   },
   input: {
     borderWidth: 3,
@@ -105,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   addButton: {
-    backgroundColor: 'green',
+    backgroundColor: '#009900',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
   },
   task: {
     flexDirection: 'row',
@@ -128,15 +134,24 @@ const styles = StyleSheet.create({
   },
   taskButtons: {
     flexDirection: 'row',
+    padding : 10,
   },
   editButton: {
+    color: 'white',
+    backgroundColor: '#111199',
+    paddingVertical: 8, // Adjusted padding
+    paddingHorizontal: 12, // Adjusted padding
     marginRight: 10,
-    color: 'green',
+    borderRadius: 20,
     fontWeight: 'bold',
     fontSize: 18,
   },
   deleteButton: {
-    color: 'red',
+    color: 'white',
+    backgroundColor: '#900000',
+    paddingVertical: 8, // Adjusted padding
+    paddingHorizontal: 12, // Adjusted padding
+    borderRadius: 20,
     fontWeight: 'bold',
     fontSize: 18,
   },
