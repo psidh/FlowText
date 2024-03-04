@@ -82,36 +82,42 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    color: 'white',
     padding: 40,
     marginTop: 40,
+    backgroundColor: '#010101',
   },
   titleContainer: {
+    color: 'white',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 20,
+    height: 10,
   },
   title: {
+    color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
   heading: {
+    color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 7,
-    color: '#212121',
   },
   input: {
+    color: 'white',
     borderWidth: 3,
-    borderColor: '#ccc',
+    borderColor: '#ccc333',
     padding: 10,
     marginBottom: 10,
     borderRadius: 10,
     fontSize: 18,
   },
   addButton: {
-    backgroundColor: '#009900',
+    color: 'white',
+    backgroundColor: '#555555',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
@@ -134,11 +140,11 @@ const styles = StyleSheet.create({
   },
   taskButtons: {
     flexDirection: 'row',
-    padding : 10,
+    padding: 10,
   },
   editButton: {
     color: 'white',
-    backgroundColor: '#111199',
+    backgroundColor: '#333333',
     paddingVertical: 8, // Adjusted padding
     paddingHorizontal: 12, // Adjusted padding
     marginRight: 10,
@@ -148,7 +154,7 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     color: 'white',
-    backgroundColor: '#900000',
+    backgroundColor: '#212121',
     paddingVertical: 8, // Adjusted padding
     paddingHorizontal: 12, // Adjusted padding
     borderRadius: 20,
